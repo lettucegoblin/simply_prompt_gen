@@ -12,7 +12,7 @@ def promptgen(context, model):
     m_manage = None
     return output
 
-modelList = os.listdir(modelDirectory)
+modelList = [model for model in os.listdir(modelDirectory) if os.path.isdir(os.path.join(modelDirectory, model))]
 # create a dictionary of model names and model paths
 modelDict = {}
 for model in modelList:
